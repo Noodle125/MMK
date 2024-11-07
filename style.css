@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+#login {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    margin: 50px auto;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+#login-btn {
+    padding: 10px 20px;
+    background: #4285F4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#login-btn:hover {
+    background: #357AE8;
+}
+#hero {
+    padding: 20px;
+    text-align: center;
+    background: #e2e2e2;
+    margin-bottom: 20px;
+}
+#exchange-gold {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+#thai-baht {
+    text-align: center;
+}
+#chat {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+}
+#chat-container {
+    display: flex;
+    flex-direction: column;
+}
+#chat-history {
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fafafa;
+}
+#chat-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#send-btn, #emoji-btn, #upload-btn {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+#send-btn:hover, #emoji-btn:hover, #upload-btn:hover {
+    background: #555;
+}
+
+.chat-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.chat-message img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
