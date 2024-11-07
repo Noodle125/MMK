@@ -1,4 +1,15 @@
-// Firebase configuration script is moved to a separate file (firebase-config.js)
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA-Mp9Jdwq_efLZcNncujjzU0Sp7LwAv_0",
+  authDomain: "project3-d0533.firebaseapp.com",
+  projectId: "project3-d0533",
+  storageBucket: "project3-d0533.appspot.com",
+  messagingSenderId: "815891832591",
+  appId: "1:815891832591:web:1e16f544af6e974bff287a",
+  measurementId: "G-EZ1B35LGLK"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 // Google Sign-In and Chat functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -65,11 +76,11 @@ function sendMessage() {
         const user = firebase.auth().currentUser;
         // Push message to the 'public-chat' node in the database
         firebase.database().ref('public-chat/').push({
-            username: user.displayName, // Get username from Google user info
-            profilePic: user.photoURL,  // Get profile picture from Google user info
-            message: message // Message text
+            username: user.displayName,
+            profilePic: user.photoURL,
+            message: message
         });
-        document.getElementById('chat-input').value = ''; // Clear the input field after sending
+        document.getElementById('chat-input').value = '';
     }
 }
 
@@ -77,33 +88,16 @@ function uploadFile(event) {
     const file = event.target.files[0];
     if (file) {
         const user = firebase.auth().currentUser;
-        // Reference to the storage location in Firebase
         const storageRef = firebase.storage().ref(`chat-files/${file.name}`);
-        // Upload file to Firebase Storage
         storageRef.put(file).then(snapshot => {
-            // Get the download URL for the uploaded file
             snapshot.ref.getDownloadURL().then(url => {
-                // Push file link to the 'public-chat' node in the database
                 firebase.database().ref('public-chat/').push({
-                    username: user.displayName, // Get username from Google user info
-                    profilePic: user.photoURL,  // Get profile picture from Google user info
-                    message: '[File]', // Placeholder message for the file
-                    fileUrl: url // URL of the uploaded file
+                    username: user.displayName,
+                    profilePic: user.photoURL,
+                    message: '[File]',
+                    fileUrl: url
                 });
             });
         });
     }
 }
-
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyA-Mp9Jdwq_efLZcNncujjzU0Sp7LwAv_0",
-  authDomain: "project3-d0533.firebaseapp.com",
-  projectId: "project3-d0533",
-  storageBucket: "project3-d0533.appspot.com",
-  messagingSenderId: "815891832591",
-  appId: "1:815891832591:web:1e16f544af6e974bff287a",
-  measurementId: "G-EZ1B35LGLK"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
