@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMK Today - Login & Chat</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css">
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA-Mp9Jdwq_efLZcNncujjzU0Sp7LwAv_0",
+            authDomain: "project3-d0533.firebaseapp.com",
+            projectId: "project3-d0533",
+            storageBucket: "project3-d0533.appspot.com",
+            messagingSenderId: "815891832591",
+            appId: "1:815891832591:web:1e16f544af6e974bff287a",
+            measurementId: "G-EZ1B35LGLK"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 </head>
 <body>
     <header>
@@ -27,7 +41,7 @@
         <section id="exchange-gold">
             <div id="thai-baht">
                 <h3>Thai Baht Price</h3>
-                <img id="baht-image" src="./images/bath-price.jpg" alt="Thai Baht Image">
+                <img id="baht-image" src="images/bath-price.jpg" alt="Thai Baht Image">
             </div>
         </section>
         <section id="chat">
@@ -41,6 +55,6 @@
             </div>
         </section>
     </section>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
